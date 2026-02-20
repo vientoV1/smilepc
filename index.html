@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>smilepc.ru</title>
+  <meta name="description" content="Smile PC — визитка" />
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      display: grid;
+      min-height: 100svh;
+      place-items: center;
+      padding: 24px;
+    }
+    .card {
+      width: min(520px, 100%);
+      border: 1px solid rgba(127,127,127,.25);
+      border-radius: 20px;
+      padding: 28px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+      backdrop-filter: blur(6px);
+    }
+    .logo { width: 110px; height: 110px; margin: 0 auto 12px; }
+    h1 { margin: 8px 0 6px; font-size: 28px; letter-spacing: .2px; }
+    p { margin: 0 0 18px; opacity: .85; }
+    a.btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border-radius: 14px;
+      text-decoration: none;
+      border: 1px solid rgba(127,127,127,.35);
+      font-weight: 600;
+    }
+    .muted { margin-top: 16px; font-size: 13px; opacity: .7; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <!-- Минималистичная эмблема (можно потом заменить на твою) -->
+    <svg class="logo" viewBox="0 0 128 128" fill="none" aria-label="Smile PC logo">
+      <circle cx="64" cy="64" r="52" stroke="currentColor" stroke-width="8" opacity="0.9"/>
+      <!-- подмигивание -->
+      <path d="M40 54 H58" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+      <!-- глаз -->
+      <circle cx="82" cy="54" r="6" fill="currentColor"/>
+      <!-- улыбка -->
+      <path d="M42 78 C52 92, 76 92, 86 78" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+    </svg>
+
+    <h1>SMILE PC</h1>
+    <p>Ремонт и настройка • быстро и по делу</p>
+
+    <a class="btn" href="tel:+7XXXXXXXXXX" aria-label="Позвонить">
+      📞 <span>+7 (XXX) XXX-XX-XX</span>
+    </a>
+
+    <div class="muted">Тестовая версия • скоро добавим услуги и мессенджеры</div>
+  </main>
+</body>
+</html>
