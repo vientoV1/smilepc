@@ -1,67 +1,52 @@
-<!doctype html>
-<html lang="ru">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>smilepc.ru</title>
-  <meta name="description" content="Smile PC — визитка" />
-  <style>
-    :root { color-scheme: light dark; }
-    body {
-      margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      display: grid;
-      min-height: 100svh;
-      place-items: center;
-      padding: 24px;
-    }
-    .card {
-      width: min(520px, 100%);
-      border: 1px solid rgba(127,127,127,.25);
-      border-radius: 20px;
-      padding: 28px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,.08);
-      backdrop-filter: blur(6px);
-    }
-    .logo { width: 110px; height: 110px; margin: 0 auto 12px; }
-    h1 { margin: 8px 0 6px; font-size: 28px; letter-spacing: .2px; }
-    p { margin: 0 0 18px; opacity: .85; }
-    a.btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px 18px;
-      border-radius: 14px;
-      text-decoration: none;
-      border: 1px solid rgba(127,127,127,.35);
-      font-weight: 600;
-    }
-    .muted { margin-top: 16px; font-size: 13px; opacity: .7; }
-  </style>
-</head>
-<body>
-  <main class="card">
-    <!-- Минималистичная эмблема (можно потом заменить на твою) -->
-    <svg class="logo" viewBox="0 0 128 128" fill="none" aria-label="Smile PC logo">
-      <circle cx="64" cy="64" r="52" stroke="currentColor" stroke-width="8" opacity="0.9"/>
-      <!-- подмигивание -->
-      <path d="M40 54 H58" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
-      <!-- глаз -->
-      <circle cx="82" cy="54" r="6" fill="currentColor"/>
-      <!-- улыбка -->
-      <path d="M42 78 C52 92, 76 92, 86 78" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
-    </svg>
+<!-- Подключаем иконки для красоты -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com">
 
-    <h1>SMILE PC</h1>
-    <p>Ремонт и настройка • быстро и по делу</p>
+<style>
+  .repair-form {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', sans-serif;
+  }
+  .repair-form h2 { text-align: center; color: #333; margin-bottom: 20px; }
+  .input-group { margin-bottom: 15px; position: relative; }
+  .input-group i { position: absolute; left: 15px; top: 38px; color: #007bff; }
+  .repair-form input, .repair-form textarea {
+    width: 100%; padding: 12px 15px 12px 40px;
+    border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;
+  }
+  .repair-form button {
+    width: 100%; padding: 15px; background: #007bff; color: white;
+    border: none; border-radius: 8px; cursor: pointer; font-weight: bold;
+    transition: background 0.3s;
+  }
+  .repair-form button:hover { background: #0056b3; }
+</style>
 
-    <a class="btn" href="tel:+7XXXXXXXXXX" aria-label="Позвонить">
-      📞 <span>+7 (XXX) XXX-XX-XX</span>
-    </a>
+<div class="repair-form">
+  <h2><i class="fas fa-tools"></i> Заявка на ремонт</h2>
+  <form action="https://formspree.io" method="POST">
+    <div class="input-group">
+      <label>Ваше имя</label><br>
+      <i class="fas fa-user"></i>
+      <input type="text" name="name" placeholder="Иван Иванов" required>
+    </div>
+    
+    <div class="input-group">
+      <label>Телефон</label><br>
+      <i class="fas fa-phone"></i>
+      <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required>
+    </div>
 
-    <div class="muted">Тестовая версия • скоро добавим услуги и мессенджеры</div>
-  </main>
-</body>
-</html>
+    <div class="input-group">
+      <label>Что случилось?</label><br>
+      <i class="fas fa-comment-dots" style="top: 38px;"></i>
+      <textarea name="message" rows="4" placeholder="Например: Не включается монитор..." style="padding-left: 40px;"></textarea>
+    </div>
+
+    <button type="submit">Отправить мастеру</button>
+  </form>
+</div>
